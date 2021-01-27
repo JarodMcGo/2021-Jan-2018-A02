@@ -11,21 +11,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ChinookSystem.Entities
 {
-    [Table("Artists")]
-    
-    internal class Artist
+    [Table("MediaTypes")]
+    internal class MediaType
     {
         private string _Name;
         [Key]
-        public int ArtistId { get; set; }
-
-        [StringLength(120, ErrorMessage = "Artist name is limited to 120 characters")]
+        public int MediaTypeId { get; set; }
+        [StringLength(120, ErrorMessage ="Name must be 120 characters max")]
         public string Name
         {
             get { return _Name; }
             set { _Name = string.IsNullOrEmpty(value) ? null : value; }
         }
 
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Track> Tracks { get; set; }
     }
 }
