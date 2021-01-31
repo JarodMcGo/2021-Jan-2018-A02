@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Dummy.cs" />
+    <Compile Include="DAL\ChinookSystemContext.cs" />
     <Compile Include="DAL\Dummy.cs" />
     <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\Artist.cs" />

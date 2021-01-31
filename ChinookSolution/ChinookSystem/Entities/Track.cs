@@ -18,15 +18,12 @@ namespace ChinookSystem.Entities
         private string _Composer;
         [Key]
         public int TrackId { get; set; }
-        [StringLength(200, ErrorMessage ="Name is 200 characters max")]
-        public string Name
-        {
-            get { return _Name; }
-            set { _Name = string.IsNullOrEmpty(value) ? null : value; }
-        }
-        public int AlbumId { get; set; }
+        [StringLength(200, ErrorMessage ="Name is 200 characters max", MinimumLength = 1)]
+        [Required(ErrorMessage ="Track name is required")]
+        public string Name { get; set; }
+        public int? AlbumId { get; set; }
         public int MediaTypeId { get; set; }
-        public int GenreId { get; set; }
+        public int? GenreId { get; set; }
         [StringLength(220, ErrorMessage ="Composer is 220 characters max")]
         public string Composer
         {
@@ -34,8 +31,8 @@ namespace ChinookSystem.Entities
             set { _Composer = string.IsNullOrEmpty(value) ? null : value; }
         }
         public int Milliseconds { get; set; }
-        public int Bytes { get; set; }
-        public int UnitPrice { get; set; }
+        public int? Bytes { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public virtual Album Album { get; set; }
         public virtual Genre Genre { get; set; }
