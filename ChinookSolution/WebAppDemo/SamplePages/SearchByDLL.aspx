@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="Filter Search Demo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchByDLL.aspx.cs" Inherits="WebAppDemo.SamplePages.SearchByDLL" %>
+
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Search Albums by Artist</h1>
     <%-- Search Area --%>
@@ -15,7 +18,7 @@
     <%-- Messages Area --%>
     <div class="row">
         <div class="offset-3">
-            <asp:Label ID="Message" runat="server"></asp:Label>
+            <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
         </div>
     </div>
 
